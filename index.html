@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPEC 1 Quiz App</title>
+    <link rel="stylesheet" href="final.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Welcome Screen -->
+         <section id="welcome-screen"class="screen active" role="main"aria-labelledby="welcome-title">
+            <h1 id="welcome-title">Welcome to Quiz App</h1>
+            <button id="start-btn" aria-label="Start the quiz">Start</button>
+        </section>
+
+        <!-- Name Input Screen -->
+        <section id="name-input-screen" class="screen" role="main" aria-labelledby="name-prompt">
+            <p id="name-prompt">Enter your name:</p>
+            <input type="text" id="user-name-input" placeholder="Please enter your name" aria-label="Enter your name">
+            <button id="next-btn-name" aria-label="Proceed to readiness check">Proceed</button>
+        </section>
+
+        <!-- Readiness Check Screen -->
+        <section id="readiness-screen" class="screen" role="main" aria-labelledby="readiness-prompt">
+            <p id="readiness-prompt"></p>
+            <div class="options-container horizontal-options">
+                <button id="yes-ready-btn" class="option-btn square-btn" aria-label="Yes, I am ready">YES</button>
+                <button id="no-ready-btn" class="option-btn square-btn evade" aria-label="No, I am not ready">NO</button>
+            </div>
+        </section>
+        
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen" role="main" aria-labelledby="question-text">
+            <div class="quiz-header">
+                <span id="score-display" aria-live="polite"></span>
+                <span id="question-counter" aria-live="polite">Question 1/10</span>
+            </div>
+            <h2 id="question-text">Here's the Question</h2>
+            <div id="answer-buttons" class="options-container" role="radiogroup" aria-label="Answer options"></div>
+            <div class="quiz-navigation">
+                <button id="prev-q-btn" class="nav-btn" style="display: none;" aria-label="Go to previous question">←Previous</button>
+                <button id="next-q-btn" class="nav-btn" aria-label="Go to next question">Next →</button>
+                <button id="finish-btn" class="nav-btn" style="display: none;" aria-label="Finish the quiz">Finish Quiz</button>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section id="results-screen" class="screen" role="main" aria-labelledby="results-message">
+            <h2 id="results-message">Results Message Here</h2>
+            <p id="farewell-message">WELL PLAYED, BOSS!</p>
+        </section>
+    </div>
+
+    <script src="final.js"></script>
+</body>
+</html>

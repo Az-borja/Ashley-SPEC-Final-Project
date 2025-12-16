@@ -1,0 +1,155 @@
+:root {
+    --primary-color: #c0145c; /* For letters */
+    --secondary-color: #d30d4850; /* background */
+    --accent-color: #000000; /* Muted Gold/Brass */
+        
+    --pass-bg: #0d6317; /* Green for pass */
+    --fail-bg: #810a03; /* Red for fail */
+      
+    --font-stack:'Time New Roman', serif;
+    --subheading-font: 'Poppins', sans-serif;
+    
+}
+
+
+body {  
+    background-color: var(--secondary-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+} 
+
+.quiz-container {
+    background-color:white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(58, 25, 25, 0.911); 
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+
+/* if wala ni, magasunod ra tanan sa isa ka page */
+.screen {
+    display: none;
+}
+
+
+/* ivisible ang mga active */
+.screen.active {
+    display: block;
+}
+
+
+h1{
+
+ font-family: var(--subheading-font);
+
+}
+
+
+h2 {
+    color: var(--primary-color);
+    font-family: var(--font-stack);
+}
+
+
+/* this for the buton styles */
+button {
+    background-color: var(--primary-color);
+    color:white;
+    border: none;
+    padding: 12px 24px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font-stack);
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s, position 0.3s, left 0.3s, top 0.3s;
+}
+
+button:hover {
+    transform: translateY(-5px);  
+}
+
+
+/* for pointing the buton color*/
+button:hover {
+    background-color: rgb(16, 59, 16);
+}
+
+
+/* this is for the please enter you name  */
+input[type="text"] {
+    padding: 10px;
+    margin: 15px 0;
+    width: 80%;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-family: var(--font-stack);
+    font-size: 1rem;
+}
+
+/* for YES or NO placement */
+.options-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;               /* ← guarantees spacing so they never overlap */
+    width: 100%;
+    margin-top: none;
+    position: relative;
+}
+
+.options-container button {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+
+/* para sa nindot ang movement sa mga answer buttons */
+.options-container button:hover {
+    transform: translateY(-5px);  
+}
+
+
+.option-btn {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.option-btn:hover, .option-btn:focus {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Make YES/NO buttons square and centered */
+.square-btn {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Specific styles for correctness feedback */
+.option-btn.correct {
+    background-color: var(--pass-bg);
+    color: white;
+    border-color: var(--pass-bg);
+}
+
+.option-btn.incorrect {
+    background-color: var(--fail-bg);
+    color: white;
+    border-color: var(--fail-bg);
+}
+
+
